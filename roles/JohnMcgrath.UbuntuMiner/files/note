@@ -1,0 +1,13 @@
+Add files to this directory
+
+
+http://developer.amd.com/amd-accelerated-parallel-processing-app-sdk/
+
+http://developer.amd.com/display-library-adl-sdk/
+
+
+
+ansible miners -a "free -m" -u root --ask-pass
+
+
+ansible-playbook provision.yml --ask-pass

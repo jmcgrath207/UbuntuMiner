@@ -1,0 +1,4 @@
+- hosts: miners
+  roles:
+     - role: JohnMcgrath.UbuntuMiner
+       become: yes

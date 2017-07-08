@@ -1,0 +1,51 @@
+
+
+- name: Upgrade all packages to the latest version
+  apt:
+    name: "*"
+    state: latest
+
+
+– name: Install list of packages
+  action: apt pkg= state=installed
+    with_items:
+       – ibcurl4-openssl-dev
+       – pkg-config
+       – libtool
+       - libncurses5-dev
+
+
+-name: create miner user
+- user:
+    name: "{{ miner_user_name }}"
+    comment: "John Doe"
+    uid: 1040
+    group: "{{ miner_user_group }}"
+
+
+- name: Install AMD APP SDK
+    template:
+      src: "{{ playbook_dir }}/files/AMD-APP-SDK-.*.sh"
+      dest: "/tmp/."
+      owner: "{{ miner_user_name }}"
+      group: "{{ miner_user_group }}"
+      mode: 0640
+
+- name: Install AMD ADL SDK
+    template:
+      src: "{{ playbook_dir }}/files/AMD-APP-SDK-.*.sh"
+      dest: "/tmp/."
+      owner: "{{ miner_user_name }}"
+      group: "{{ miner_user_group }}"
+      mode: 0640
+
+
+
+- name: clone mining pool hub offical repo
+    repo: 'https://github.com/miningpoolhub/sgminer.git'
+    dest: /opt/AMDADL/
+
+
+
+
+

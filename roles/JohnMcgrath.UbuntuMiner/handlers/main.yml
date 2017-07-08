@@ -1,0 +1,8 @@
+---
+# handlers file for JohnMcgrath.UbuntuMiner
+
+- name: Restart sgminer
+  systemd:
+    name: sgminer
+    state: restarted
+    daemon_reload: yes
