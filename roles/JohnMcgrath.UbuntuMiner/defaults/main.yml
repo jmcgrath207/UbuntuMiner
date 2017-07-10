@@ -1,2 +1,25 @@
 ---
 # defaults file for JohnMcgrath.UbuntuMiner
+
+
+
+miner_user_name: miner
+miner_user_group: miner
+
+
+#Location of amd driver files
+
+base_file_dir: "{{ playbook_dir }}/roles/JohnMcgrath.UbuntuMiner/files"
+
+amd_drivers: "amdgpu-pro-17.10-446706.tar.xz"
+
+#http://developer.amd.com/tools-and-sdks/heterogeneous-computing/amd-accelerated-parallel-processing-app-sdk/downloads/
+amd_app_sdk: "AMD-APP-SDK-v3.0.130.136-GA-linux64.sh"
+
+
+#Extract the folder name into the /files/ADL_SDK/ directory
+#http://developer.amd.com/tools-and-sdks/graphics-development/display-library-adl-sdk/
+amd_adl_sdk: "ADL_SDK"
+
+mining_hub_username:
+mining_hub_password:

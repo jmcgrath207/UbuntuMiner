@@ -1,1 +1,12 @@
-ansible miners -m ping -u root
+
+
+
+#Download Drivers
+#https://support.amd.com/en-us/kb-articles/Pages/AMDGPU-PRO-Driver-for-Linux-Release-Notes.aspx
+# https://support.amd.com/en-us/kb-articles/Pages/AMDGPU-PRO-Install.aspx
+file: https://www2.ati.com/drivers/linux/ubuntu/amdgpu-pro-17.10-446706.tar.xz
+
+
+
+#sgminer setup
+https://www.youtube.com/watch?v=lvlCD_k5yvU
