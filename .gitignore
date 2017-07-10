@@ -7,5 +7,5 @@
 *.iml
 out
 gen
-
+/roles/JohnMcgrath.UbuntuMiner/defaults/main.yml
 *.retry
