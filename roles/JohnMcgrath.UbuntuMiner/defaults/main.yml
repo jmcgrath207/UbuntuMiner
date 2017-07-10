@@ -22,4 +22,9 @@ amd_app_sdk: "AMD-APP-SDK-v3.0.130.136-GA-linux64.sh"
 amd_adl_sdk: "ADL_SDK"
 
 mining_hub_username:
+mining_hub_worker:
 mining_hub_password:
+
+
+
+

@@ -29,6 +29,7 @@
    - opencl-headers
    - clinfo
    - ocl-icd-opencl-dev
+   - lm-sensors
 
 - name: Copy AMD Graphic Drivers
   synchronize:
@@ -116,16 +117,17 @@
 #git submodule init
 #git submodule update
 #autoreconf -i
-#CFLAGS="-O2 -Wall -march=native -std=gnu99" ./configure <options>
+# remove options to enable adl
+#  CFLAGS="-O2 -Wall -march=native -std=gnu99" ./configure --disable-adl-checks --disable-adl
 #make
 #
-#- name: mining pool hub config.j2
-#  template:
-#    src: "config.j2.j2"
-#    dest: "/tmp/."
-#    owner: "{{ miner_user_name }}"
-#    group: "{{ miner_user_group }}"
-#    mode: u+rw
+- name: mining pool hub sgminer.conf
+  template:
+    src:  sgminer.conf
+    dest: "/home/miner/sgminer/."
+    owner: "{{ miner_user_name }}"
+    group: "{{ miner_user_group }}"
+    mode: u+rw
 
 
 
@@ -136,6 +138,10 @@
     group: "{{ miner_user_group }}"
     recurse: yes
     mode: 0770
+
+
+
+# start config file sgminer -c sgminer.conf
 
 #- name: Remove useless packages from the cache
 #  apt:
