@@ -3,11 +3,12 @@ Add files to this directory
 
 http://developer.amd.com/amd-accelerated-parallel-processing-app-sdk/
 
+
+
 http://developer.amd.com/display-library-adl-sdk/
+amd_adl_sdk: "ADL_SDK"
 
 
-
-ansible miners -a "free -m" -u root --ask-pass
-
-
-ansible-playbook provision.yml --ask-pass
+#Claymore
+#https://bitcointalk.org/index.php?topic=1433925.0
+claymore_package: Claymore's Dual Ethereum+Decred_Siacoin_Lbry_Pascal AMD+NVIDIA GPU Miner v9.7 - LINUX.tar.gz
