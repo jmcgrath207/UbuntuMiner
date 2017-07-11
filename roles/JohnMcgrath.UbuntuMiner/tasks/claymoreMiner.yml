@@ -1,0 +1,29 @@
+
+
+- name: Creates claymore directory
+  file:
+    path: /home/miner/claymore
+    state: directory
+    owner: "{{ miner_user_name }}"
+    group: "{{ miner_user_group }}"
+    mode: u+rw
+
+- name: Copy claymore files
+  synchronize:
+    src: "/{{ base_file_dir }}/Claymore/{{ claymore_package }}"
+    dest: "/home/miner/extract/."
+
+- name: extract claymore files
+  unarchive:
+    src: "/home/miner/extract/{{ claymore_package }}"
+    dest: /home/miner/claymore
+    extra_opts: [--strip-components=1]
+    remote_src: True
+
+- name: add claymore mining config
+  template:
+    src:  config.text
+    dest: "/home/miner/claymore/."
+    owner: "{{ miner_user_name }}"
+    group: "{{ miner_user_group }}"
+    mode: u+rw

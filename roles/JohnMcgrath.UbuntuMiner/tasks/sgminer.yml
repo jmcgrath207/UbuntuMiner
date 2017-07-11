@@ -1,0 +1,49 @@
+
+- name: Creates sgminer directory
+  file:
+    path: /home/miner/sgminer
+    state: directory
+    owner: "{{ miner_user_name }}"
+    group: "{{ miner_user_group }}"
+    mode: u+rw
+
+- name: clone nice hash offical repo
+  git:
+    repo: "{{ sg_miner_repo }}"
+    dest: /home/miner/sgminer
+    update: no
+    track_submodules: yes
+    force: no
+
+
+- name: copy AMD ADL header files
+  raw: cp /opt/AMDADL/include/* /home/miner/sgminer/ADL_SDK/.
+
+
+
+#- name: install sgminer
+#git submodule init
+#git submodule update
+#autoreconf -i
+# remove options to enable adl
+#  CFLAGS="-O2 -Wall -march=native -std=gnu99" ./configure --disable-adl-checks --disable-adl
+#make
+#export DISPLAY=:0
+#GPU_FORCE_64BIT_PTR 0
+#GPU_MAX_HEAP_SIZE 100
+#GPU_USE_SYNC_OBJECTS 1
+#GPU_MAX_ALLOC_PERCENT 100
+#GPU_SINGLE_ALLOC_PERCENT 100
+
+
+- name: add sgminer json config
+  template:
+    src:  sgminer.conf
+    dest: "/home/miner/sgminer/."
+    owner: "{{ miner_user_name }}"
+    group: "{{ miner_user_group }}"
+    mode: u+rw
+
+
+
+

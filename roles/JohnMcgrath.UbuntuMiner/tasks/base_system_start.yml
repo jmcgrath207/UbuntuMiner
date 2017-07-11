@@ -1,0 +1,117 @@
+
+- name: "FIX: Ubuntu 16.04 LTS doesn't come with certain modules, required by ansible"
+  raw: apt-get install python-minimal aptitude -y
+  become: true
+  become_user: root
+  become_method: sudo
+
+- name: Run the equivalent of "apt-get update" as a separate step
+  apt:
+    update_cache: yes
+
+- name: Update all packages to the latest version
+  apt:
+    upgrade: dist
+
+
+- name: Install list of dependices
+  apt: state=present name={{ item }}
+  with_items:
+   - libcurl4-openssl-dev
+   - pkg-config
+   - libtool
+   - libncurses5-dev
+   - htop
+   - git
+   - autoconf
+   - ocl-icd-libopencl1
+   - opencl-headers
+   - clinfo
+   - ocl-icd-opencl-dev
+   - lm-sensors
+   - libevent-2.0-5
+
+- name: create miner user
+  user:
+    name: "{{ miner_user_name }}"
+    comment: "John Doe"
+    uid: 1040
+    group: "{{ miner_user_group }}"
+
+- name: Creates extract directory
+  file:
+    path: /home/miner/extract
+    state: directory
+    owner: "{{ miner_user_name }}"
+    group: "{{ miner_user_group }}"
+    mode: u+rw
+
+- name: Copy AMD Graphic Drivers
+  synchronize:
+    src: "/{{ base_file_dir }}/{{ amd_drivers }}"
+    dest: "/home/miner/extract/."
+
+
+- name: Unpack Graphic Drivers
+  unarchive:
+      src: "/home/miner/extract/{{ amd_drivers }}"
+      dest: "/home/miner/."
+      remote_src: True
+
+#
+#  Need to have action that install amd gpu drivers
+#
+#
+
+- name: Copy AMD APP SDK
+  synchronize:
+    src: "/{{ base_file_dir }}/{{ amd_app_sdk }}"
+    dest: "/home/miner/."
+
+
+#- name: Install AMD APP SDK
+#  expect:
+#    command: /bin/bash -c "/tmp/{{ amd_app_sdk }}"
+#    responses:
+#      .* : " "
+#      .* : " "
+#      .* : " "
+#      .* : " "
+#      .*Do you accept the licence.* : "y"
+#      .*choosing the default directory.* : "/opt"
+
+
+
+- name: copy AMDADL GPU Monitor
+  synchronize:
+    src: "/{{ base_file_dir }}/{{ amd_adl_sdk }}/"
+    dest: "/opt/AMDADL/"
+
+
+- name: Change permission for miner in /opt
+  file:
+    dest: "/opt/."
+    owner: "{{ miner_user_name }}"
+    group: "{{ miner_user_group }}"
+    recurse: yes
+    mode: 0550
+
+- name: Add miner to video group
+  user:
+    name: "{{ miner_user_name }}"
+    shell: /bin/bash
+    groups: video
+    append: yes
+
+- name: set AMD enviroment variables
+  shell: "echo $MY_ENV_VARIABLE"
+  environment:
+      DISPLAY: :0
+      GPU_FORCE_64BIT_PTR: 0
+      GPU_MAX_HEAP_SIZE: 100
+      GPU_USE_SYNC_OBJECTS: 1
+      GPU_MAX_ALLOC_PERCENT: 100
+      GPU_SINGLE_ALLOC_PERCENT: 100
+
+
+

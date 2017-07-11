@@ -1,0 +1,22 @@
+
+
+- name: Change permission for miner in /home/miner
+  file:
+    dest: "/home/miner/."
+    owner: "{{ miner_user_name }}"
+    group: "{{ miner_user_group }}"
+    recurse: yes
+    mode: 0770
+
+
+
+# start config file sgminer -c sgminer.conf
+
+#- name: Remove useless packages from the cache
+#  apt:
+#    autoclean: yes
+#
+#- name: Remove dependencies that are no longer required
+#  apt:
+#    autoremove: yes
+

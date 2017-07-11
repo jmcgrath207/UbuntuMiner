@@ -1,30 +1,32 @@
 ---
 # defaults file for JohnMcgrath.UbuntuMiner
 
+#### See download notes in files/download notes before starting ####
+
 
 
 miner_user_name: miner
 miner_user_group: miner
 
 
-#Location of amd driver files
-
 base_file_dir: "{{ playbook_dir }}/roles/JohnMcgrath.UbuntuMiner/files"
 
 amd_drivers: "amdgpu-pro-17.10-446706.tar.xz"
 
-#http://developer.amd.com/tools-and-sdks/heterogeneous-computing/amd-accelerated-parallel-processing-app-sdk/downloads/
 amd_app_sdk: "AMD-APP-SDK-v3.0.130.136-GA-linux64.sh"
 
-
-#Extract the folder name into the /files/ADL_SDK/ directory
-#http://developer.amd.com/tools-and-sdks/graphics-development/display-library-adl-sdk/
 amd_adl_sdk: "ADL_SDK"
 
-mining_hub_username:
-mining_hub_worker:
-mining_hub_password:
+#### All miner config files located in the temp folder ####
 
+# use sgminer.conf
+sg_miner_repo: "https://github.com/nicehash/sgminer.git"
+
+sg_miner_username: password
+sg_miner_password: password
+
+#use config.text
+claymore_package: Claymore's Dual Ethereum+Decred_Siacoin_Lbry_Pascal AMD+NVIDIA GPU Miner v9.7 - LINUX.tar.gz
 
 
 
