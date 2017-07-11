@@ -9,6 +9,11 @@ http://developer.amd.com/display-library-adl-sdk/
 amd_adl_sdk: "ADL_SDK"
 
 
-#Claymore
+#claymore_dual_miner Dual Ethereum AMD+NVIDIA GPU Miner v9.7 (Windows/Linux)
 #https://bitcointalk.org/index.php?topic=1433925.0
-claymore_package: Claymore's Dual Ethereum+Decred_Siacoin_Lbry_Pascal AMD+NVIDIA GPU Miner v9.7 - LINUX.tar.gz
+claymore_dual_miner_package: Claymore's Dual Ethereum+Decred_Siacoin_Lbry_Pascal AMD+NVIDIA GPU Miner v9.7 - LINUX.tar.gz
+
+
+#claymore_cryptonight
+#https://bitcointalk.org/index.php?topic=638915.0
+claymore_dual_miner_package:

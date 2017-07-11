@@ -1,0 +1,13 @@
+#Config file for claymore_dual_miner miner
+
+-epool {{ claymore_dual_miner_epool }}
+-ewal {{ claymore_dual_miner_ewal }}
+-eworker {{ claymore_dual_miner_eworker }}
+-esm {{ claymore_dual_miner_esm }}
+-epsw {{ claymore_dual_miner_epsw }}
+-allpools {{ claymore_dual_miner_allpools }}
+-allcoins {{ claymore_dual_miner_allcoins }}
+
+-mode {{ claymore_dual_miner_mining_mode }}
+-tt 70
+-asm 0

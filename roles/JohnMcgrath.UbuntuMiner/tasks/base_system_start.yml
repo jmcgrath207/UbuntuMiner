@@ -30,6 +30,24 @@
    - ocl-icd-opencl-dev
    - lm-sensors
    - libevent-2.0-5
+   - screen
+   
+# add when var
+#- name: create the file to be used for swap
+#  command: fallocate -l 16G /mnt/16GB.swap
+#
+#- name: format the file for swap
+#  command: mkswap /mnt/16GB.swap
+#
+#- name: change swap file permissions
+#  file: path=/mnt/16GB.swap owner=root group=root mode=0600
+#
+#- name: add the file to the system as a swap file
+#  command: swapon /mnt/16GB.swap
+#
+#- name: write swap entry in fstab
+#  mount: name=none src=/mnt/16GB.swap fstype=swap opts=sw passno=0 dump=0 state=present
+#
 
 - name: create miner user
   user:

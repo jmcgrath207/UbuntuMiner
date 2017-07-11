@@ -25,8 +25,20 @@ sg_miner_repo: "https://github.com/nicehash/sgminer.git"
 sg_miner_username: password
 sg_miner_password: password
 
-#use config.text
-claymore_package: Claymore's Dual Ethereum+Decred_Siacoin_Lbry_Pascal AMD+NVIDIA GPU Miner v9.7 - LINUX.tar.gz
+#use config.txt
+# see https://bitcointalk.org/index.php?topic=1433925.0 for config options
+claymore_dual_miner_package: Claymore's Dual Ethereum+Decred_Siacoin_Lbry_Pascal AMD+NVIDIA GPU Miner v9.7 - LINUX.tar.gz
+claymore_dual_miner_mining_mode: 1
+claymore_dual_miner_epool: us-east.ethash-hub.miningpoolhub.com:17020
+#Username and worker name if mining hub pool
+claymore_dual_miner_ewal: sonance207.1
+#Username and worker name if mining hub pool
+claymore_dual_miner_eworker: "{{ claymore_dual_miner_ewal }}"
+claymore_dual_miner_esm: 2
+claymore_dual_miner_epsw: x
+claymore_dual_miner_allpools: 1
+claymore_dual_miner_allcoins: 1
 
 
-
+#https://bitcointalk.org/index.php?topic=638915.0
+#working on adding claymore cryptonote

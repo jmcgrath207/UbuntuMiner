@@ -1,0 +1,29 @@
+
+
+- name: Creates claymore_dual_miner directory
+  file:
+    path: /home/miner/claymore_dual_miner
+    state: directory
+    owner: "{{ miner_user_name }}"
+    group: "{{ miner_user_group }}"
+    mode: u+rw
+
+- name: Copy claymore_dual_miner files
+  synchronize:
+    src: "/{{ base_file_dir }}/claymore_dual_miner/{{ claymore_dual_miner_package }}"
+    dest: "/home/miner/extract/."
+
+- name: extract claymore_dual_miner files
+  unarchive:
+    src: "/home/miner/extract/{{ claymore_dual_miner_package }}"
+    dest: /home/miner/claymore_dual_miner
+    extra_opts: [--strip-components=1]
+    remote_src: True
+
+- name: add claymore_dual_miner mining config
+  template:
+    src:  config.txt
+    dest: "/home/miner/claymore_dual_miner/."
+    owner: "{{ miner_user_name }}"
+    group: "{{ miner_user_group }}"
+    mode: u+rw
