@@ -1,4 +1,14 @@
 - hosts: miners
+  become: yes
   roles:
-     - role: JohnMcgrath.UbuntuMiner
-       become: yes
+    - role: JohnMcgrath.UbuntuMiner
+    #- role: franklinkim.environment
+    #  environment_config:
+    #    - DISPLAY: :0
+    #    - GPU_FORCE_64BIT_PTR: 0
+    #    - GPU_MAX_HEAP_SIZE: 100
+    #    - GPU_USE_SYNC_OBJECTS: 1
+    #    - GPU_MAX_ALLOC_PERCENT: 100
+    #    - GPU_SINGLE_ALLOC_PERCENT: 100
+
+

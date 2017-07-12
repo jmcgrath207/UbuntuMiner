@@ -22,7 +22,7 @@
 
 - name: add claymore_dual_miner mining config
   template:
-    src:  config.txt
+    src:  templates/claymore_dual_miner/config.txt
     dest: "/home/miner/claymore_dual_miner/."
     owner: "{{ miner_user_name }}"
     group: "{{ miner_user_group }}"

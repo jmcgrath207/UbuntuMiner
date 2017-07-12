@@ -12,3 +12,7 @@ file: https://www2.ati.com/drivers/linux/ubuntu/amdgpu-pro-17.10-446706.tar.xz
 https://www.youtube.com/watch?v=lvlCD_k5yvU
 
 sgminer -v -c sgminer.conf
+
+
+Segfault issue
+#https://fireproxy.crushus.com/bitcointalk.org/index.php?topic=175757.msg1829691#msg1829691

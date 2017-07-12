@@ -121,15 +121,20 @@
     groups: video
     append: yes
 
-- name: set AMD enviroment variables
-  shell: "echo $MY_ENV_VARIABLE"
-  environment:
-      DISPLAY: :0
-      GPU_FORCE_64BIT_PTR: 0
-      GPU_MAX_HEAP_SIZE: 100
-      GPU_USE_SYNC_OBJECTS: 1
-      GPU_MAX_ALLOC_PERCENT: 100
-      GPU_SINGLE_ALLOC_PERCENT: 100
+#- name: set AMD enviroment variables
+#  shell: "echo $MY_ENV_VARIABLE"
+#  environment:
+#      DISPLAY: :0
+#      GPU_FORCE_64BIT_PTR: 0
+#      GPU_MAX_HEAP_SIZE: 100
+#      GPU_USE_SYNC_OBJECTS: 1
+#      GPU_MAX_ALLOC_PERCENT: 100
+#      GPU_SINGLE_ALLOC_PERCENT: 100
 
-
+    #    export DISPLAY=:0
+    #    export GPU_FORCE_64BIT_PTR=0
+    #    export GPU_MAX_HEAP_SIZE=100
+    #    export GPU_USE_SYNC_OBJECTS=1
+    #    export GPU_MAX_ALLOC_PERCENT=100
+    #    export GPU_SINGLE_ALLOC_PERCENT=100
 

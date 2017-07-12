@@ -22,8 +22,10 @@ amd_adl_sdk: "ADL_SDK"
 # use sgminer.conf
 sg_miner_repo: "https://github.com/nicehash/sgminer.git"
 
-sg_miner_username: password
-sg_miner_password: password
+sg_miner_username: 1KnDjudiUf3FnpfN2L356Uh3g5cTB8qosM
+sg_miner_password: x
+
+
 
 #use config.txt
 # see https://bitcointalk.org/index.php?topic=1433925.0 for config options
