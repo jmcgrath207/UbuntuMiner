@@ -19,3 +19,12 @@ Segfault issue
 
 Multi algo nice hash
 #https://www.nicehash.com/index.jsp?p=multialgo
+
+
+
+#AMD GPU fan speeds
+
+https://askubuntu.com/questions/759146/ubuntu-16-04-how-to-get-my-gpu-temp-and-fan-speed
+
+
+# ./bfgminer -c bfgminer.conf 2> bfglog

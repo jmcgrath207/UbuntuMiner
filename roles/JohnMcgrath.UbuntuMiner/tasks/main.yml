@@ -1,5 +1,6 @@
 #- include: base_system_start.yml
-- include: sgminer.yml
+#- include: sgminer.yml
+- include: bfgminer.yml
 #- include: claymore_dual_miner.yml
 #- include: base_system_end.yml
 

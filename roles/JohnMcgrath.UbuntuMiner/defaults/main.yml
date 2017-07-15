@@ -25,6 +25,10 @@ sg_miner_repo: "https://github.com/tpruvot/sgminer.git"
 sg_miner_username: sonance207.1
 sg_miner_password: x
 
+bfg_miner_repo: "https://github.com/luke-jr/bfgminer.git"
+bfg_miner_username: sonance207.1
+bfg_miner_password: x
+
 
 
 #use config.txt

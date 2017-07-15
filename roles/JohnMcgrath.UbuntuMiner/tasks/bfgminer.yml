@@ -1,0 +1,34 @@
+- name: Creates bfgminer directory
+  file:
+    path: /home/miner/bfgminer
+    state: directory
+    owner: "{{ miner_user_name }}"
+    group: "{{ miner_user_group }}"
+    mode: u+rw
+
+
+- name: clone bfg miner repo
+  git:
+    repo: "{{ bfg_miner_repo }}"
+    dest: /home/miner/bfgminer
+    update: no
+    track_submodules: yes
+    force: no
+
+
+#  ./autogen.sh    # only needed if building from git repo
+#  ./configure  --enable-keccak --enable-scrypt --enable-opencl
+#  make
+
+# make clean
+
+# bfgminer -S opencl:auto -o http://pool:port -u username -p password --set-device intensity=9
+
+
+- name: add bfgminer json config
+  template:
+    src:  bfgminer.conf
+    dest: "/home/miner/bfgminer/."
+    owner: "{{ miner_user_name }}"
+    group: "{{ miner_user_group }}"
+    mode: u+rw
