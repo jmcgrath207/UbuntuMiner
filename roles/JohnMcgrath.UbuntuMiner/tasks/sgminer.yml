@@ -25,8 +25,8 @@
 # git submodule init
 # git submodule update
 # autoreconf -i
-# remove options to enable adl
-# CFLAGS="-O2 -Wall -march=native -std=gnu99" LDFLAGS="-L/opt/amdgpu-pro/lib/x86_64-linux-gnu" ./configure --disable-adl-checks --disable-adl
+# remove options to enable adl ex. ./configure --disable-adl-checks --disable-adl
+# CFLAGS="-O2 -Wall -march=native -std=gnu99" LDFLAGS="-L/opt/amdgpu-pro/lib/x86_64-linux-gnu" ./configure
 # make or make install for global
 
 

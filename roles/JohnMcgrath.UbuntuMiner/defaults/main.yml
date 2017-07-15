@@ -20,9 +20,9 @@ amd_adl_sdk: "ADL_SDK"
 #### All miner config files located in the temp folder ####
 
 # use sgminer.conf
-sg_miner_repo: "https://github.com/nicehash/sgminer.git"
+sg_miner_repo: "https://github.com/tpruvot/sgminer.git"
 
-sg_miner_username: 1KnDjudiUf3FnpfN2L356Uh3g5cTB8qosM
+sg_miner_username: sonance207.1
 sg_miner_password: x
 
 
